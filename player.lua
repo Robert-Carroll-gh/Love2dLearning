@@ -1,7 +1,7 @@
 player = {
 	x = 400,
 	y = 300,
-	color = { 0, 255, 255},
+	color = { 0, 1, 1},
 	radius = 25,
 	speedY = 0,
 	jumpSpeed,
@@ -21,7 +21,7 @@ player.update = function()
 	end
 end
 player.draw = function()
-	love.graphics.setColor( player.color[1],  player.color[2], player.color[3] )
+	love.graphics.setColor( player.color )
 	love.graphics.circle( "fill", player.x, player.y, player.radius )
 end
 player.attack = function()

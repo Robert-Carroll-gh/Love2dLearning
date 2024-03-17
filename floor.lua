@@ -2,7 +2,7 @@ floor = {
 	y = 550,
 }
 floor.draw = function()
-	love.graphics.setColor(100, 100, 100)
+	love.graphics.setColor(1, 1, 1)
 	love.graphics.setLineWidth(5)
 	love.graphics.line(0, floor.y, 800, floor.y)
 end

@@ -7,7 +7,7 @@ dummy = {
 	
 	draw = function()
 		
-		love.graphics.setColor(100, 100, 100)
+		love.graphics.setColor(1, 1, 1)
 	
 		love.graphics.rectangle("fill", dummy.x, dummy.y, dummy.width, dummy.height)
 	
