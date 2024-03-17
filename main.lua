@@ -1,12 +1,11 @@
-<<<<<<< Updated upstream
 love.draw = function()
 	love.graphics.setColor( 0, 255, 255 )
 	love.graphics.circle( "fill", 400, 300, 25 )
 end
 
-love.joystick = function()
-	down = love.joystick.isDown( joystick, button )
-=======
+love.keypressed = function()
+	down = love.keypressed.isDown( joystick, button )
+
 player = {
 	x = 400,
 	y = 300,
@@ -15,7 +14,7 @@ player = {
 }
 
 player.jump = function()
-	if joyStick:isGamepadDown('a') then
+	if love.keypressed.isDown('w') then
         if player.jump then
 	       player.speedY = player.jumpSpeed
             player.jump = false
@@ -40,8 +39,6 @@ love.update = function()
 	end
 end
 
-love.joystickpressed = function("a")
-   player:jumping()
+love.keypressed.isDown = function("w")
+   player.jumping()
 end
-
->>>>>>> Stashed changes
