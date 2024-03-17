@@ -1,6 +1,11 @@
+require("floor")
 require("player")
 require("dummy")
-require("floor")
+
+love.load = function()
+	floor.allign(player)
+	floor.allign(dummy)
+end
 
 love.draw = function()
 	dummy.draw()

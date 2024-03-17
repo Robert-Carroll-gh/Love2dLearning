@@ -4,7 +4,7 @@ player = {
 	color = { 0, 255, 255},
 	radius = 25,
 	speedY = 0,
-	jumpSpeed
+	jumpSpeed,
 }
 player.update = function()
 	if player.y < 405 then
