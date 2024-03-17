@@ -1,7 +1,4 @@
-love.draw = function()
-	love.graphics.setColor( 0, 255, 255 )
-	love.graphics.circle( "fill", 400, 300, 25 )
-end
+
 
 love.keypressed = function()
 end
@@ -14,6 +11,24 @@ player = {
 	speedY = 0,
 	jumpSpeed
 }
+player.update = function()
+	if player.y < 405 then
+		player.y = player.y + player.speedY
+	end
+	if love.keyboard.isDown("w") then
+		--player.y = player.y - 5
+	end
+	if love.keyboard.isDown("a") then
+		player.x = player.x - 5
+	end
+	if love.keyboard.isDown("d") then
+		player.x = player.x + 5
+	end
+end
+player.draw = function()
+	love.graphics.setColor( player.color[1],  player.color[2], player.color[3] )
+	love.graphics.circle( "fill", player.x, player.y, player.size )
+end
 
 --[[
 player.jump = function()
@@ -27,22 +42,10 @@ end
 ]]--
 
 love.draw = function()
-	love.graphics.setColor( player.color[1],  player.color[2], player.color[3] )
-	love.graphics.circle( "fill", player.x, player.y, player.size )
+	player.draw()
 end
 
 love.update = function()
-
-	if player.y < 405 then
-		player.y = player.y + player.speedY
-	end
-	if love.keyboard.isDown("w") then
-		player.y = player.y - 5
-	end
-	if love.keyboard.isDown("a") then
-		player.x = player.x - 5
-	end
-	if love.keyboard.isDown("d") then
-		player.x = player.x + 5
-	end
+	player.update()
+	
 end
