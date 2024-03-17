@@ -1,11 +1,7 @@
-love.graphics.circle( "fill", 300, 100, 50 )
-
-function love.load()
-   Player = circle
-   x = 50
-   y = 50
+love.draw = function()
+	love.graphics.setColor( 0, 255, 255 )
+	love.graphics.circle( "fill", 400, 300, 25 )
 end
 
-function love.draw()
-   love.graphics.draw(circle, x, y)
-end
+love.joystick = function()
+	down = love.joystick.isDown( joystick, button )
